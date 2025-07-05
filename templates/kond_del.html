@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Siz rostanham ochirasizmi</h2>
+
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit">Ha</button>
+  <a href="{% url 'kond-detail' kond.id %}" >Yo'q</a>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Yangi Konditsioner Qo‘shish</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #084cdf;
+        }
+
+        .back-btn {
+            background-color: #eaeaea;
+            color: #333;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #d6d6d6;
+        }
+    </style>
+</head>
+<body>
+
+<a href="{% url 'home' %}" class="back-btn">← Orqaga qaytish</a>
+
+<div class="form-container">
+    <h2>Yangi Konditsioner Qo‘shish</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label for="id_brand">Brend:</label>
+        <input type="text" name="brand" id="id_brand" required>
+
+        <label for="id_model">Model:</label>
+        <input type="text" name="model" id="id_model" required>
+
+        <label for="id_price">Narx ($):</label>
+        <input type="number" step="0.01" name="price" id="id_price" required>
+
+        <label for="id_image">Rasm (ixtiyoriy):</label>
+        <input type="file" name="image" id="id_image">
+
+        <button type="submit">Saqlash</button>
+    </form>
+</div>
+
+</body>
+</html>
