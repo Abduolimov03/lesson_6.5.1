@@ -39,5 +39,5 @@ def delete_kond(request, pk):
     if request.method == 'POST':
         kond.delete()
         return redirect('kond')
-    return render(request, 'kond_del.html', {'kond':kond})
+    return render(request, 'kond_del.html', {'kond':kond}
 
