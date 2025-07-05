@@ -125,11 +125,11 @@
 </header>
 
 <nav>
-    <a href="">🏠 Bosh sahifa</a>
+    <a href="{% url 'home' %}">🏠 Bosh sahifa</a>
     <a href="{% url 'kond' %}">📦 Konditsionerlar</a>
     <a href="{% url 'create-kond' %}">➕ Qo‘shish</a>
-    <a href="">ℹ️ Biz haqimizda</a>
-    <a href="">📞 Bog‘lanish</a>
+    <a href="{% url 'about' %}">ℹ️ Biz haqimizda</a>
+    <a href="{% url 'contact' %}">📞 Bog‘lanish</a>
 </nav>
 
 <div class="hero">
